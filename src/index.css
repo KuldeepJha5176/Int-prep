@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html { font-size: 15px; }
+
+body { margin: 0; background: #09090b; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+/* ── Detail content — prose styles for dark theme ── */
+@layer components {
+  .detail-content {
+    @apply text-sm leading-relaxed text-zinc-300;
+  }
+  .detail-content h4 {
+    @apply text-zinc-400 font-semibold text-[11px] uppercase tracking-widest mt-5 mb-2;
+  }
+  .detail-content p { @apply mb-2.5; }
+
+  .detail-content ul { @apply list-disc pl-5 mb-3 space-y-1.5; }
+  .detail-content ul li { @apply text-zinc-300; }
+
+  /* Numbered items → individual dark cards (matches the screenshot) */
+  .detail-content ol { @apply list-none pl-0 space-y-2.5 mb-3; }
+  .detail-content ol li {
+    @apply bg-[#1c1c1f] rounded-xl px-5 py-4 border border-zinc-800/60 text-zinc-300;
+  }
+
+  .detail-content strong { @apply text-white font-semibold; }
+  .detail-content em    { @apply text-amber-400 not-italic font-medium; }
+
+  /* Code block */
+  .detail-content pre {
+    @apply bg-[#0d0d10] border border-zinc-800 rounded-xl p-4 overflow-x-auto my-3 text-[12px] leading-relaxed;
+    font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  }
+  .detail-content pre code {
+    @apply bg-transparent text-zinc-300 p-0 rounded-none text-[12px];
+    font-family: inherit;
+  }
+  .detail-content code {
+    @apply bg-zinc-800 text-blue-400 px-1.5 py-0.5 rounded-md text-[11px] font-mono;
+  }
+
+  /* Tables */
+  .detail-content table { @apply w-full text-xs mb-3 border-collapse; }
+  .detail-content th {
+    @apply bg-zinc-800/80 text-zinc-300 font-semibold text-left px-3 py-2.5 border border-zinc-700;
+  }
+  .detail-content td { @apply px-3 py-2.5 border border-zinc-700/60 text-zinc-400; }
+  .detail-content tr:hover td { @apply bg-zinc-800/40; }
+}
