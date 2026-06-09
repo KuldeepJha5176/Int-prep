@@ -409,10 +409,10 @@ pipeline {
             steps { sh 'mvn sonar:sonar' }
         }
         stage('Docker Build') {
-            steps { sh 'docker build -t myapp:${BUILD_NUMBER} .' }
+            steps { sh 'docker build -t myapp:\${BUILD_NUMBER} .' }
         }
         stage('Deploy') {
-            steps { sh 'kubectl set image deployment/app app=myapp:${BUILD_NUMBER}' }
+            steps { sh 'kubectl set image deployment/app app=myapp:\${BUILD_NUMBER}' }
         }
     }
 }</code></pre>`
