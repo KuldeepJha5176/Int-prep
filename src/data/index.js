@@ -10,6 +10,7 @@ import { BATCH2_JAVA, BATCH2_NEW_SECTIONS } from './batch2-java'
 import BATCH2_SPRING from './batch2-spring'
 import BATCH2_CODING from './batch2-coding'
 import BATCH2_DEVOPS from './batch2-devops'
+import BATCH3        from './batch3'
 
 const mergeExtras = (base, ...extras) => {
   const merged = {}
@@ -37,6 +38,7 @@ const BASE_DATA = mergeExtras(
   BATCH2_SPRING,
   BATCH2_CODING,
   BATCH2_DEVOPS,
+  BATCH3,
 )
 
 // Append brand-new sections (Generics, Inner Classes)
